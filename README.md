@@ -5,7 +5,7 @@ The University Club Management System (UCMS) is a web-based platform developed t
 ## 🎯 Purpose
 Managing student clubs manually—tracking members, sending announcements, organizing events—can be chaotic and inefficient. UCMS solves this by providing a digital tool that simplifies the workflow for both club administrators and members.
 
-## Core Functionalities**
+## Core Functionalities
 **Event Management:**
 Admins can create, edit, and view upcoming events. Each event has relevant details like date, description, and venue. This helps members stay updated on club activities.
 
