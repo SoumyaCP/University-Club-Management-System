@@ -10,13 +10,13 @@ Managing student clubs manually—tracking members, sending announcements, organ
 Admins can create, edit, and view upcoming events. Each event has relevant details like date, description, and venue. This helps members stay updated on club activities.
 
 **Member Management:**
-New members can be added through a form, and a directory of existing members can be viewed. This simplifies attendance, communication, and role assignment within the club.
+New members can be added through a form, and a directory of existing members can be viewed. This simplifies communication, and role assignment within the club.
 
 **Announcement System:**
 Admins can post announcements that are visible to all members, making communication fast and uniform.
 
 **Feedback Collection:**
-A feedback form allows members to submit their thoughts, ideas, or concerns about the club and its activities. This helps the administration improve club experiences over time.
+A feedback form allows members to submit their thoughts, ideas, or concerns about the club events. This helps the administration improve club experiences over time.
 
 **Authentication System:**
 Basic login functionality ensures that only authorized users can manage backend operations like adding events or announcements.
