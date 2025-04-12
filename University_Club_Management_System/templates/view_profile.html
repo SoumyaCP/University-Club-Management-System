@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <p><strong>Name:</strong> {{ profile.name }}</p>
+    <p><strong>SRN:</strong> {{ profile.SRN }}</p>
+    <p><strong>Gender:</strong> {{ profile.gender }}</p>
+    <p><strong>Email:</strong> {{ profile.email }}</p>
+    <p><strong>DOB:</strong> {{ profile.DOB }}</p>
+    <p><strong>Phone Number:</strong> {{ profile.phone_no }}</p>
+
+    <a href="/profile">Edit Profile</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>

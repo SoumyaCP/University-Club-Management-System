@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Home - UCMS</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw; 
+    background-image: url('{{ url_for("static", filename="background.jpg") }}'); 
+    background-size: 100% 90%; 
+    background-position: bottom center; 
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px; 
+}
+
+    h1 {
+    font-size: 120px;
+    margin: 100px 0 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: white; 
+    font-family: 'Arial Black', Impact, sans-serif;
+}
+
+.sub-heading {
+    font-size: 50px; 
+    color: white;
+    margin: 20px 0 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-family: 'Arial Black', Impact, sans-serif;
+}
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 123, 255, 0.7);
+        }
+        a:hover {
+            background-color: #7be716; 
+            color: black; 
+        }
+
+        .logout-button {
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #7be716; 
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 50px;
+            }
+
+            .sub-heading {
+                font-size: 18px;
+            }
+
+            a {
+                padding: 8px 15px;
+            }
+
+            nav {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>UCMS</h1> 
+        <div class="sub-heading">University Club Management System</div> 
+        <nav>
+            <a href="{{ url_for('profile') }}">View Profile</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('announce') }}">Announcement</a>
+            <a href="{{ url_for('members') }}">Membership</a>
+            <a href="{{ url_for('add_feedback') }}">Give Feedback</a>
+            <a class="logout-button" href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </div>
+
+    <footer>
+        &copy; 2024 UCMS | All Rights Reserved
+    </footer>
+</body>
+</html>

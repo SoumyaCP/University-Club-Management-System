@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        h3 {
+            text-align: center;
+            color: #777;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Feedback for Events</h2>
+    {% if feedbacks %}
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Event Name</th>
+            <th>Event Date</th>
+            <th>Rating</th>
+            <th>Feedback Content</th>
+        </tr>
+        {% for feedback in feedbacks %}
+        <tr>
+            <td>{{ feedback[0] }}</td>
+            <td>{{ feedback[1] }}</td>
+            <td>{{ feedback[2] }}</td>
+            <td>{{ feedback[3] }}</td>
+            <td>{{ feedback[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3>No feedback available</h3>
+    {% endif %}
+    <footer>
+        <a href="{{ url_for('index1') }}" class="back-link">Back to Index</a>
+    </footer>
+</body>
+</html>

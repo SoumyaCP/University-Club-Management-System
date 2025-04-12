@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event Feedback</title>
+    <style>
+        /* Add some CSS for better styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .message {
+            margin: 10px 0;
+            /* Default color for messages */
+        }
+        .error {
+            color: red; /* Red for error messages */
+        }
+        .success {
+            color: green; /* Green for success messages */
+        }
+        /* Star rating styling */
+        .rating {
+            display: flex;
+            direction: row-reverse;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 24px;
+            color: #ddd;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+
+        .rating input:checked ~ label {
+            color: #f5b301;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #ffca28;
+        }
+         /* Footer styles */
+         footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Feedback for an Event</h2>
+    {% if feedback_message %}
+    <div class="message {% if 'success' in feedback_message %}success{% else %}error{% endif %}">{{ feedback_message }}</div>
+    {% endif %}
+    <form action="/submit_feedback" method="POST">
+        <label for="userid">User ID:</label>
+        <input type="text" id="userid" name="userid" required>
+
+        <label for="eventname">Event Name:</label>
+        <input type="text" id="eventname" name="eventname" required>
+
+        <label for="eventdate">Event Date:</label>
+        <input type="date" id="eventdate" name="eventdate" required>
+
+        <label for="rating">Feedback Rating:</label>
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5" required>
+            <label for="star5">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">&#9733;</label>
+        </div>
+
+        <label for="content">Feedback Content:</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
+
+        <input type="submit" value="Submit Feedback">
+    </form>
+    <footer>
+        <a href="{{ url_for('index') }}" class="back-link">Back to Index</a>
+    </footer>
+</body>
+</html>
